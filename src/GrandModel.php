@@ -9,16 +9,9 @@
 namespace Grandiloquent;
 
 
-use Grandiloquent\Relations\BelongsTo;
 use Grandiloquent\Relations\BelongsToMany;
 use Grandiloquent\Relations\HasMany;
-use Grandiloquent\Relations\HasManyThrough;
 use Grandiloquent\Relations\HasOne;
-use Carbon\Carbon;
-use DB;
-use FrogFrame\Util\DateTimeFormatter;
-//use Illuminate\Database\Eloquent\GrandCollection;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class GrandModel extends Model
@@ -66,13 +59,7 @@ abstract class GrandModel extends Model
 			$models = $models instanceof GrandCollection ?
 				$models : GrandCollection::make([$models]);
 
-			$models->saveMany();
-			/** @var GrandModel $model */
-			foreach($models as $model)
-			{
-				if(!$model->push())
-					return false;
-			}
+			$models->pushMany();
 		}
 
 		return true;
