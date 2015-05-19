@@ -10,7 +10,10 @@
         }
     ],
     "minimum-stability": "stable",
-    "suggest": {
+    "require": {
         "laravel/framework": "5.0.*"
+    },
+    "replace": {
+        "laravel/framework": "self.version"
     }
 }
