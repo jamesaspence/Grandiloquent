@@ -1,0 +1,16 @@
+{
+    "name": "jamesspence/grandiloquent",
+    "description": "An extension on Laravel's wonderful Eloquent ORM, Grandiloquent seeks to change a few things in the name of greater efficiency. Mainly, these changes entail grouped queries and other, more efficient SQL usage.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Spence",
+            "email": "Jamesaspence20@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "suggest": {
+        "laravel/framework": "5.0.*"
+    }
+}
