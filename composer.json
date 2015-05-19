@@ -10,10 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "laravel/framework": "5.0.*"
-    },
-    "replace": {
-        "laravel/framework": "self.version"
+    "suggest": {
+        "laravel/framework": "This framework (specifically Eloquent ORM) is REQUIRED. But you already know that. Why would you download this if you didn't have Eloquent installed?"
     }
 }
