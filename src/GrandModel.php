@@ -6,7 +6,7 @@
  * Time: 5:11 PM
  */
 
-namespace App\Grandiloquent;
+namespace Grandiloquent;
 
 
 use App\Grandiloquent\Relations\BelongsTo;

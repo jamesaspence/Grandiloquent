@@ -6,7 +6,7 @@
  * Time: 9:20 AM
  */
 
-namespace App\Grandiloquent;
+namespace Grandiloquent;
 
 use App\Grandiloquent\Exception\MassEventFireException;
 use Carbon\Carbon;

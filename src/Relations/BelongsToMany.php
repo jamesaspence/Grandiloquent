@@ -6,7 +6,7 @@
  * Time: 4:28 PM
  */
 
-namespace App\Grandiloquent\Relations;
+namespace Grandiloquent\Relations;
 
 use App\Grandiloquent\GrandCollection;
 use App\Grandiloquent\GrandModel;

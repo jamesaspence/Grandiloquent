@@ -6,7 +6,7 @@
  * Time: 4:02 PM
  */
 
-namespace App\Grandiloquent\Exception;
+namespace Grandiloquent\Exception;
 
 
 use Exception;

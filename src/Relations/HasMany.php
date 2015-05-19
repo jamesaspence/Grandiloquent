@@ -6,7 +6,7 @@
  * Time: 4:33 PM
  */
 
-namespace App\Grandiloquent\Relations;
+namespace Grandiloquent\Relations;
 
 use App\Grandiloquent\GrandCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany as EloquentHasMany;
