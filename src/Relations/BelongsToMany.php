@@ -8,8 +8,8 @@
 
 namespace Grandiloquent\Relations;
 
-use App\Grandiloquent\GrandCollection;
-use App\Grandiloquent\GrandModel;
+use Grandiloquent\GrandCollection;
+use Grandiloquent\GrandModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as EloquentBelongsToMany;
 
@@ -20,7 +20,7 @@ class BelongsToMany extends EloquentBelongsToMany
      * @param array $models
      * @param array $joinings
      * @return array
-     * @throws \App\Grandiloquent\Exception\MassEventFireException
+     * @throws \Grandiloquent\Exception\MassEventFireException
      */
     public function saveMany(array $models, array $joinings = [])
 	{

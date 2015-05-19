@@ -9,11 +9,11 @@
 namespace Grandiloquent;
 
 
-use App\Grandiloquent\Relations\BelongsTo;
-use App\Grandiloquent\Relations\BelongsToMany;
-use App\Grandiloquent\Relations\HasMany;
-use App\Grandiloquent\Relations\HasManyThrough;
-use App\Grandiloquent\Relations\HasOne;
+use Grandiloquent\Relations\BelongsTo;
+use Grandiloquent\Relations\BelongsToMany;
+use Grandiloquent\Relations\HasMany;
+use Grandiloquent\Relations\HasManyThrough;
+use Grandiloquent\Relations\HasOne;
 use Carbon\Carbon;
 use DB;
 use FrogFrame\Util\DateTimeFormatter;

@@ -8,7 +8,7 @@
 
 namespace Grandiloquent\Relations;
 
-use App\Grandiloquent\GrandCollection;
+use Grandiloquent\GrandCollection;
 use Illuminate\Database\Eloquent\Relations\HasOne as EloquentHasOne;
 
 class HasOne extends EloquentHasOne
@@ -17,7 +17,7 @@ class HasOne extends EloquentHasOne
     /**
      * @param array $models
      * @return array
-     * @throws \App\Grandiloquent\Exception\MassEventFireException
+     * @throws \Grandiloquent\Exception\MassEventFireException
      */
 	public function saveMany(array $models)
 	{

@@ -8,7 +8,7 @@
 
 namespace Grandiloquent\Relations;
 
-use App\Grandiloquent\GrandCollection;
+use Grandiloquent\GrandCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany as EloquentHasMany;
 
 class HasMany extends EloquentHasMany
@@ -17,7 +17,7 @@ class HasMany extends EloquentHasMany
     /**
      * @param array $models
      * @return array
-     * @throws \App\Grandiloquent\Exception\MassEventFireException
+     * @throws \Grandiloquent\Exception\MassEventFireException
      */
 	public function saveMany(array $models)
 	{

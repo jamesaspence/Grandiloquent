@@ -8,7 +8,7 @@
 
 namespace Grandiloquent;
 
-use App\Grandiloquent\Exception\MassEventFireException;
+use Grandiloquent\Exception\MassEventFireException;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
