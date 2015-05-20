@@ -9,6 +9,11 @@
             "email": "Jamesaspence20@gmail.com"
         }
     ],
+	"autoload": {
+		"psr4": {
+			"Grandiloquent\\": "src/"
+		}
+	},
     "minimum-stability": "stable",
     "suggest": {
         "laravel/framework": "This framework (specifically Eloquent ORM) is REQUIRED. But you already know that. Why would you download this if you didn't have Eloquent installed?"
