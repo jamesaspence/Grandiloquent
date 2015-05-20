@@ -7,7 +7,7 @@ My entire philosophy was to ensure that Eloquent methods, such as saveMany, and 
 
 Installation can be done by adding the following line to your composer.json require:
 
-    "jamesspence/grandiloquent": "1.*"
+    "jamesspence/grandiloquent": "1.0.0"
     
 ##Configuration
 
