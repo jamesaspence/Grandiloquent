@@ -63,6 +63,13 @@ for($i = 0; $i < 5; ++$i)
 $book->chapters()->saveMany($chapters);
 ```
 
-This will work in an equivalent manner to Eloquent's saveMany, but will do it in, at most, three queries.
-This extension also modifies default push behavior. Rather than pushing each model individually, pushMany (to a degree)
-combines the individual queries into larger queries of related models.
+You can also call saves directly on a collection, like so.
+
+```php
+/** @var GrandCollection $books */
+$books = Book::take(10)->get();
+$books->saveMany();
+```
+
+These methods will perform all updates as a single query.
+However, inserts are still done individually.
