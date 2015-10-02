@@ -8,6 +8,9 @@
 
 namespace Grandiloquent;
 
+use Grandiloquent\Relations\BelongsToMany;
+use Grandiloquent\Relations\HasMany;
+use Grandiloquent\Relations\HasOne;
 
 trait GrandModelTrait
 {
