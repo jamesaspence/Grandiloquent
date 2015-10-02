@@ -19,7 +19,7 @@ class HasOne extends EloquentHasOne
      * @return array
      * @throws \Grandiloquent\Exception\MassEventFireException
      */
-	public function saveMany(array $models)
+	public function saveMany($models)
 	{
 		$modelCollection = GrandCollection::make($models);
 		return $modelCollection->saveMany()->toItemArray();
