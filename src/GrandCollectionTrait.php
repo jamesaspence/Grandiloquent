@@ -161,7 +161,7 @@ trait GrandCollectionTrait
          * @var GrandModel $baseModel
          * @var GrandModel $class
          */
-        $baseModel = $models[0];
+        $baseModel = $models[key($models)];
         $table = $baseModel->getTable();
         $updateSql = "update `$table` set ";
         $updateFieldsSql = [];
@@ -223,7 +223,7 @@ trait GrandCollectionTrait
 
         $params = array_merge($params, $ids);
 
-        $connection = $this->getConnection($models[0]);
+        $connection = $this->getConnection($baseModel);
         $connection->statement($updateSql, $params);
         foreach($models as $model)
         {
@@ -248,7 +248,7 @@ trait GrandCollectionTrait
             return [];
 
         /** @var GrandModel $baseModel */
-        $baseModel = $models[0];
+        $baseModel = $models[key($models)];
         $table = $baseModel->getTable();
 
         /** @var GrandModel $model */
@@ -266,7 +266,7 @@ trait GrandCollectionTrait
             $values[] = $model->getAttributes($fields);
         }
 
-        $connection = $this->getConnection($models[0]);
+        $connection = $this->getConnection($baseModel);
         $connection->table($table)->insert($values);
         $firstId = $connection->getPdo()->lastInsertId();
 
