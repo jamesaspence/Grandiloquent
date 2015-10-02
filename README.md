@@ -3,6 +3,10 @@
 Grandiloquent is a simple and elegant extension on Eloquent that makes mass writes to the database more efficient. 
 My entire philosophy was to ensure that Eloquent methods, such as saveMany, and push, would be more efficient on the database. 
 
+## MySQL Only
+
+This package only works with MySQL currently. It uses raw queries to achieve the functionality used here. Eventually I'd like to support all database types supported by laravel, but that is not the case yet.
+
 ## Installation
 
 Installation can be done by adding the following line to your composer.json require:
