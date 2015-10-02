@@ -104,8 +104,8 @@ trait GrandCollectionTrait
 
         foreach($saveManys as $key => $saveMany)
         {
-            $saveManys[$key] = GrandCollection::make($saveMany);
-            /** @var GrandCollection $saveMany */
+            $saveManys[$key] = static::make($saveMany);
+            /** @var static $saveMany */
             $saveMany = $saveManys[$key];
             $saveMany->pushMany();
         }
@@ -260,7 +260,7 @@ trait GrandCollectionTrait
         $firstId = $connection->getPdo()->lastInsertId();
 
         $class = get_class($baseModel);
-        /** @var GrandCollection $newModels */
+        /** @var static $newModels */
         $newModels = $class::where("id", ">=", $firstId)->take(count($models))->orderBy("id", "asc")->get();
         return $newModels->all();
     }
