@@ -13,17 +13,6 @@ use Grandiloquent\Exception\MassEventFireException;
 trait GrandCollectionTrait
 {
 
-    public function __construct(...$arrays)
-    {
-        $items = [];
-        foreach($arrays as $array)
-        {
-            $array = is_null($array) ? [] : $this->getArrayableItems($array);
-            $items = $items + $array;
-        }
-        $this->items = $items;
-    }
-
     public function saveMany()
     {
         $models = $this->all();
