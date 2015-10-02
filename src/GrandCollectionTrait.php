@@ -223,12 +223,23 @@ trait GrandCollectionTrait
 
         $params = array_merge($params, $ids);
 
-        DB::statement($updateSql, $params);
+        $connection = $this->getConnection($models[0]);
+        $connection->statement($updateSql, $params);
         foreach($models as $model)
         {
             $model->finishSave(["touch" => false]);
         }
         return $models;
+    }
+
+    /**
+     * Retrieves the connection from a model.
+     * @param GrandModel $model
+     * @return \Illuminate\Database\Connection
+     */
+    protected function getConnection(GrandModel $model)
+    {
+        return $model->getConnection();
     }
 
     protected function insertMany(array $models)
@@ -255,8 +266,9 @@ trait GrandCollectionTrait
             $values[] = $model->getAttributes($fields);
         }
 
-        DB::table($table)->insert($values);
-        $firstId = DB::connection("mysql")->getPdo()->lastInsertId();
+        $connection = $this->getConnection($models[0]);
+        $connection->table($table)->insert($values);
+        $firstId = $connection->getPdo()->lastInsertId();
 
         $class = get_class($baseModel);
         /** @var GrandCollection $newModels */
