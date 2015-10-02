@@ -8,8 +8,6 @@
 
 namespace Grandiloquent;
 
-use Grandiloquent\Exception\MassEventFireException;
-use DB;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class GrandCollection extends EloquentCollection
