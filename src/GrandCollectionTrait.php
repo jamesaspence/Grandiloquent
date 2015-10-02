@@ -8,6 +8,7 @@
 
 namespace Grandiloquent;
 
+use Grandiloquent\Exception\MassEventFireException;
 
 trait GrandCollectionTrait
 {
@@ -124,25 +125,31 @@ trait GrandCollectionTrait
 
     public function performInsertMany(array $models)
     {
-        if(count($models) < 1)
-            return [];
-
-        $newModels = $this->insertMany($models);
-        $orderedModels = [];
-        $i = 0;
-        /**
-         * @var GrandModel $model
-         */
-        foreach($models as $key => $model)
-        {
-            $orderedModels[$key] = $newModels[$i];
-            /** @var GrandModel $newModel */
-            $newModel = $newModels[$i];
-            $newModel->setRelations($model->getRelations());
-            ++$i;
+        foreach ($models as $model) {
+            $model->save();
         }
 
-        return $orderedModels;
+        return $models;
+        //@deprecated We will replace this in the future.
+//        if(count($models) < 1)
+//            return [];
+//
+//        $newModels = $this->insertMany($models);
+//        $orderedModels = [];
+//        $i = 0;
+//        /**
+//         * @var GrandModel $model
+//         */
+//        foreach($models as $key => $model)
+//        {
+//            $orderedModels[$key] = $newModels[$i];
+//            /** @var GrandModel $newModel */
+//            $newModel = $newModels[$i];
+//            $newModel->setRelations($model->getRelations());
+//            ++$i;
+//        }
+//
+//        return $orderedModels;
     }
 
     protected function updateMany(array $models)
