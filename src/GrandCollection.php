@@ -9,13 +9,12 @@
 namespace Grandiloquent;
 
 use Grandiloquent\Exception\MassEventFireException;
-use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class GrandCollection extends EloquentCollection
 {
 
-    use GrandCollectionTrait
+    use GrandCollectionTrait;
     
 }
